@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class bus extends Model
+class cari extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'buses';
+    protected $table = 'cari';
 
     /**
     * The database primary key value.
@@ -25,7 +25,9 @@ class bus extends Model
      *
      * @var array
      */
-    protected $fillable = ['namaBus', 'tipeBus', 'jumlahKursi', 'seat', 'hargaSewa','fasilitas','kuantitas'];
+    protected $fillable = ['tanggalBerangkat', 'tanggalPulang', 'tipeBus'];
+
+    public $timestamps=false;
 
     
 }

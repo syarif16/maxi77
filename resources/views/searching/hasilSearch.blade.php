@@ -2,53 +2,53 @@
 
 @section('content')
 
-<form action="/searching" method="post">
+<form action="/pemesanan" method="get">
 	<h3 align="center"> BIS TERSEDIA </h3>
 	<div class="table-responsive">          
-		<table class="table">
-		<th>
-			Nama bus
-		</th>
-		<th>
-			Tipe Bus
-		</th>
-		<th>
-			Jumlah Kursi
-		</th>
-		<th>
-			Seat
-		</th>
-		<th>
-			Harga perhari
-		</th>
-		<th>
-			Action
-		</th>
-		<tr>
-			<td>Roling Stone</td>
-			<td>SHD</td>
-			<td>60</td>
-			<td>2-3</td>
-			<td>3.000.000</td>
-			<td><a href="/pemesanan/create" class="btn btn-warning" role="button">Sewa</a></td>	
-		</tr>
-		<tr>
-			<td>Charlie</td>
-			<td>SHD</td>
-			<td>59</td>
-			<td>2-3</td>
-			<td>3.000.000</td>
-			<td><a href="/pemesanan/create" class="btn btn-warning" role="button">Sewa</a></td>	
-		</tr>
-		<tr>
-			<td>Charlie</td>
-			<td>SHD</td>
-			<td>52</td>
-			<td>2-2</td>
-			<td>3.000.000</td>
-			<td><a href="/pemesanan/create" class="btn btn-warning" role="button">Sewa</a></td>	
-		</tr>
-	</table>
+		<table class="table"> {{-- ini table --}}
+			<thead>
+				<tr>
+					
+					<th>Tipe Bus</th>
+					<th>Seat</th>
+					<th>Jumlah Kursi</th>
+					<th>Harga</th>
+					<th>Fasilitas</th>
+					<th>Kuantitas</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach($bus as $bus)
+				<tr>
+					
+					<td>
+						{{$bus->tipeBus}}
+					</td>
+					<td>
+						{{$bus->seat}}
+					</td>
+					<td>
+						{{$bus->jumlahKursi}}
+					</td>
+					<td>
+						{{$bus->hargaSewa}}
+					</td>
+					<td>
+						{{$bus->fasilitas}}
+					</td>
+					<td>
+						{{$bus->kuantitas}}
+					</td>
+					<td>
+						<a href="pemesanan/create" class="btn btn-info">Sewa
+						</a>
+					</td>
+					
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
 </div>
 	{{ csrf_field() }}
 

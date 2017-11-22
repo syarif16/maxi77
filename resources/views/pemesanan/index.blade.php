@@ -11,15 +11,16 @@
 					<th>Nama Pemesan</th>
 					<th>Alamat</th>
 					<th>No.Telp</th>
+					<th>Tipe Bus</th>
+					<th>Kuantitas</th>
 					<th>Tujuan</th>
 					<th>Tanggal Berangkat</th>
-					<th>tanggal Pulang</th>
+					<th>Tanggal Kembali</th>
 					<th>Status</th>
-					<th>Action</th>
+					<th>Aksi</th>
 				</tr>
 			</thead>
 			<tbody>
-
 				@foreach($pemesanan as $pemesanan)
 				<tr>
 					<td>
@@ -35,13 +36,20 @@
 						{{$pemesanan->telepon}}
 					</td>
 					<td>
+						{{$pemesanan->tipe}}
+					</td>
+					<td>
+						{{$pemesanan->jumlah}}
+					</td>
+					<td>
 						{{$pemesanan->tujuan}}
 					</td>
+
 					<td>
 						{{$pemesanan->tanggalBerangkat}}
 					</td>
 					<td>
-						{{$pemesanan->tanggalPulang}}
+						{{$pemesanan->tanggalkembali}}
 					</td>
 					<td>
 						{{$pemesanan->status}}

@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\pemesanan;
 use App\transaksi;
+use DB;
 use Illuminate\Http\Request;
 
 class transaksiController extends Controller
@@ -26,9 +27,12 @@ class transaksiController extends Controller
                 ->orWhere('idPemesanan', 'LIKE', "%$keyword%")
                 ->paginate($perPage);
         } else {
-            $transaksi = transaksi::paginate($perPage);
+            $transaksi = DB::table('transaksis')
+            ->join('pemesanans','pemesanans.id','=','transaksis.idPemesanan')
+            ->select('namaPemesan','transaksis.*')
+            ->get();
+            
         }
-
         return view('transaksi.index', compact('transaksi'));
     }
 
@@ -39,7 +43,9 @@ class transaksiController extends Controller
      */
     public function create()
     {
-        return view('transaksi.create');
+        $pemesanan=pemesanan::all();
+
+        return view('transaksi.create',['pemesanan'=>$pemesanan]);
     }
 
     /**

@@ -28,14 +28,14 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Nama</th><th>Pekerjaan</th><th>Telepon</th><th>Actions</th>
+                                        <th>Crew</th><th>Supir</th><th>Telepon</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($crew as $item)
                                     <tr>
                                         <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->nama }}</td><td>{{ $item->pekerjaan }}</td><td>{{ $item->telepon }}</td>
+                                        <td>{{ $item->supir }}</td><td>{{ $item->telepon }}</td>
                                         <td>
                                             <a href="{{ url('/crew/' . $item->id) }}" title="View crew"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/crew/' . $item->id . '/edit') }}" title="Edit crew"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

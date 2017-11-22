@@ -102,7 +102,7 @@
                     <li><a href="/transaksi"><i class="glyphicon glyphicon-list"></i> Transaksi</a></li>
                     <li><a href="/bus"><i class="glyphicon glyphicon-stats"></i> Bus</a></li>
                     <li><a href="/crew"><i class="glyphicon glyphicon-record"></i> Crew</a></li>
-                    <li><a href="/mitra"><i class="glyphicon glyphicon-pencil"></i> Mitra</a></li>
+                    <li><a href="/laporan"><i class="glyphicon glyphicon-pencil"></i> Laporan</a></li>
                     <!-- <li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
                     <li class="submenu">
                        <a href="#">

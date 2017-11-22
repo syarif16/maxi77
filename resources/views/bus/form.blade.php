@@ -1,24 +1,10 @@
-<div class="form-group {{ $errors->has('namaBus') ? 'has-error' : ''}}">
-    <label for="namaBus" class="col-md-4 control-label">{{ 'Namabus' }}</label>
-    <div class="col-md-6">
-        <input class="form-control" name="namaBus" type="text" id="namaBus" value="{{ $bus->namaBus or ''}}" >
-        {!! $errors->first('namaBus', '<p class="help-block">:message</p>') !!}
-    </div>
-</div>
-<div class="form-group {{ $errors->has('namaBus') ? 'has-error' : ''}}">
-    <label for="nopol" class="col-md-4 control-label">{{ 'nopol' }}</label>
-    <div class="col-md-6">
-        <input class="form-control" name="nopol" type="text" id="nopol" value="{{ $bus->nopol or ''}}" >
-        {!! $errors->first('nopol', '<p class="help-block">:message</p>') !!}
-    </div>
-</div>
 <div class="form-group {{ $errors->has('tipeBus') ? 'has-error' : ''}}">
     <label for="tipeBus" class="col-md-4 control-label">{{ 'Tipebus' }}</label>
     <div class="col-md-6">
         <select name="tipeBus" class="form-control" id="tipeBus">
             <option value="">-Pilih-</option>
-            <option value="HD">HD</option>
-            <option value="SHD">SHD</option>
+            <option value="Standar">Standar</option>
+            <option value="Eksekutif">Eksekutif</option>
         </select>
         <!-- <input class="form-control" name="tipeBus" type="text" id="tipeBus" value="{{ $bus->tipeBus or ''}}" > -->
         {!! $errors->first('tipeBus', '<p class="help-block">:message</p>') !!}
@@ -63,6 +49,13 @@
     <div class="col-md-6">
         <textarea class="form-control" rows="5" name="fasilitas" type="textarea" id="fasilitas" >{{ $bus->fasilitas or ''}}</textarea>
         {!! $errors->first('fasilitas', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+<div class="form-group {{ $errors->has('kuantitas') ? 'has-error' : ''}}">
+    <label for="kualitas" class="col-md-4 control-label">{{ 'kuantitas' }}</label>
+    <div class="col-md-6">
+        <input class="form-control" name="kuantitas" type="number" id="kuantitas" value="{{ $bus->kuantitas or ''}}" >
+        {!! $errors->first('kuantitas', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 

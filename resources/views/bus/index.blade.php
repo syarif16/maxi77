@@ -28,14 +28,14 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>NamaBus</th><th>Nopol</th><th>TipeBus</th><th>Seat</th><th>JumlahKursi</th><th>Harga</th><th>Fasilitas</th><th>Actions</th>
+                                        <th>ID</th><th>TipeBus</th><th>Seat</th><th>JumlahKursi</th><th>Harga</th><th>Fasilitas</th><th>Kuantitas</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($bus as $item)
                                     <tr>
                                         <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->namaBus }}</td><td>{{ $item->nopol }}</td><td>{{ $item->tipeBus }}</td><td>{{ $item->seat }}</td><td>{{ $item->jumlahKursi }}</td><td>{{$item->hargaSewa}}</td><td>{{$item->fasilitas}}</td>
+                                        <td>{{ $item->tipeBus }}</td><td>{{ $item->seat }}</td><td>{{ $item->jumlahKursi }}</td><td>{{$item->hargaSewa}}</td><td>{{$item->fasilitas}}</td><td>{{$item->kuantitas}}</td>
                                         <td>
                                             <a href="{{ url('/bus/' . $item->id) }}" title="View bus"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/bus/' . $item->id . '/edit') }}" title="Edit bus"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

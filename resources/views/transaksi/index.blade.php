@@ -28,14 +28,14 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>TanggalTransaksi</th><th>TotalPembayaran</th><th>IdPemesanan</th><th>Actions</th>
+                                        <th>#</th><th>TanggalTransaksi</th><th>TotalPembayaran</th><th>NamaPemesanan</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($transaksi as $item)
                                     <tr>
                                         <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->tanggalTransaksi }}</td><td>{{ $item->totalPembayaran }}</td><td>{{ $item->idPemesanan }}</td>
+                                        <td>{{ $item->tanggalTransaksi }}</td><td>{{ $item->totalPembayaran }}</td><td>{{ $item->namaPemesan }}</td>
                                         <td>
                                             <a href="{{ url('/transaksi/' . $item->id) }}" title="View transaksi"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/transaksi/' . $item->id . '/edit') }}" title="Edit transaksi"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
@@ -50,7 +50,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div class="pagination-wrapper"> {!! $transaksi->appends(['search' => Request::get('search')])->render() !!} </div>
+
                         </div>
 
                     </div>

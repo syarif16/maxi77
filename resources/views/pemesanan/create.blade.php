@@ -16,35 +16,44 @@
 	<div class="col-md-4"></div>
 	<div class="col-md-3"> 
 	No.Telp </div>
-	<input type="text" name="telepon"/> <hr>
+	<input type="number" name="telepon"/> <hr>
+	<div class="col-md-4"></div>
+	<div class="col-md-3"> 
+	Tanggal Berangkat </div>
+	<input type="date" name="tanggalBerangkat"/> <hr>
+	<div class="col-md-4"></div>
+	<div class="col-md-3"> 
+	Tanggal Pulang </div>
+	<input type="date" name="tanggalPulang"/> <hr>
+	<div class="col-md-4"></div>
+	<div class="col-md-3"> 
+	Tujuan </div>
+	<input type="text" name="tujuan"/> <hr>
+	<div class="col-md-4"></div>
+	<div class="col-md-3"> 
+	idBus </div>
+	<select id="idBus" name="idBus" class="required" required="" style="width: 200px">
+		<option value="">Pilih</option>
+		@foreach($bus as $bus)
+		<option value={{$bus->id}}>{{$bus->id}}</option>
+		@endforeach
+	</select> <hr>
+	<div class="col-md-4"></div>
+	<div class="col-md-3"> 
+	Jumlah </div>
+	<input type="text" name="jumlah"/> <hr>
 	<div class="col-md-4"></div>
 	<div class="col-md-3">
-	tujuan </div>
-	<select name="tujuan">
-		<option>Pilih</option>
-		<option>Surabaya</option>
-		<option>Malang</option>
-		<option>Jogja</option>
-		<option>Bali</option>
-	</select><hr>
-	<div class="col-md-4"></div>
-	<div class="col-md-3">
-	tanggalBerangkat </div>
-	<input type="date" name="tanggalBerangkat"> <hr>
-	<div class="col-md-4"></div>
-	<div class="col-md-3">
-	tanggalPulang </div>
-	<input type="date" name="tanggalPulang"> <hr>
-	<div class="col-md-4"></div>
-	<div class="col-md-3">
-	Status </div>
-	<select name="status">
-		<option>menunggu</option>
-		<option>diterima</option>
-		<option>batal</option>
+		idCari </div>
+	<select id="idCari" name="idCari" class="required" required="" style="width: 200px">
+		<option value="">Pilih</option>
+		@foreach($cari as $cari)
+		<option value={{$cari->id}}>{{$cari->id}}</option>
+		@endforeach
 	</select> <hr>
 	<div class="col-md-4"></div>
 	<div class="col-md-3"></div>
+	
 	<a href="/pemesanan" class="btn btn-warning" role="button">Cancel</a>
 	<input type="submit" class="btn btn-primary" name="submit" value="Create">
 

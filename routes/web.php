@@ -27,11 +27,13 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
-Route::get('/hasil', function () {
-    return view('searching.hasilSearch');
+Route::get('/searching', function () {
+    return view('searching.searching');
 });
 
-route::get('/searching','searchingController@search');
+route::get('/hasil','searchingController@search');
+
+route::get('/laporan','laporanController@index');
 
 Route::resource('posts', 'PostsController');
 

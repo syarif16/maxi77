@@ -29,8 +29,6 @@
                                     </tr>
                                     <tr><th> NamaBus </th><td> {{ $bus->namaBus }} </td>
                                     </tr>
-                                    <tr><th> Nopol </th><td> {{ $bus->nopol }} </td>
-                                    </tr>
                                     <tr><th> TipeBus </th><td> {{ $bus->tipeBus }} </td>
                                     </tr>
                                     <tr><th> Seat </th><td> {{ $bus->seat }} </td>
@@ -38,6 +36,8 @@
                                     <tr><th> JumlahKursi </th><td> {{ $bus->jumlahKursi }} </td>
                                     </tr>
                                      <tr><th> Fasilitas </th><td> {{ $bus->fasilitas }} </td>
+                                    </tr>
+                                     <tr><th> Kuantitas </th><td> {{ $bus->kuantitas }} </td>
                                     </tr>
                                 </tbody>
                             </table>

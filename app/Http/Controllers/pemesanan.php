@@ -1,24 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\bus;
+use App\cari;
 use Illuminate\Http\Request;
 use App\pemesanan;
 use App\Http\Controllers\Controller;
 use session;
+use DB;
 class pemesanan extends Controller
 {
     //
 	public function index(Request $Request) {
-
-		$pemesanan = pemesanan::all();
-
+		 // $pemesanan=pemesanan::all();
+		$pemesanan=DB::table('pemesanans')
+		->join('buses','buses.id','=','pemesanans.idBus')
+		->join('cari','cari.id','=','.idCari')
+		->select('tipe','tanggalBerangkat','tanggalkembali','pemesanans.*')
+		->get();
+		// dd($pemesanan);
 		return view('pemesanan/index', ['pemesanan' => $pemesanan]);
 	}
 
 	public function create()
-	{
-		return view('pemesanan/create');
+	{	$bus=bus::all();
+		$cari=cari::all();
+		return view('pemesanan/create',['bus'=>$bus], ['cari'=>$cari]);
 
 	}
 	public function store(Request $request) {
@@ -26,11 +33,11 @@ class pemesanan extends Controller
 		$pemesanan->namaPemesan = $request->nama;
 		$pemesanan->alamatPemesan = $request->alamat;
 		$pemesanan->telepon = $request->telepon;
-		$pemesanan->tujuan = $request->tujuan;
-		$pemesanan->tanggalBerangkat = $request->tanggalBerangkat;
-		$pemesanan->tanggalPulang = $request->tanggalPulang;
 		$pemesanan->status = $request->status;
-
+		$pemesanan->tujuan = $request->tujuan;
+		$pemesanan->jumlah = $request->jumlah;
+		$pemesanan->idBus = $request->idBus;
+		$pemesanan->idCari = $request->idCari;
 		$pemesanan-> save();
 
 		return redirect('pemesanan');
@@ -50,11 +57,8 @@ class pemesanan extends Controller
 		$pemesanan->namaPemesan = $request->nama;
 		$pemesanan->alamatPemesan = $request->alamat;
 		$pemesanan->telepon = $request->telepon;
-		$pemesanan->tujuan = $request->tujuan;
-		$pemesanan->tanggalBerangkat = $request->tanggalBerangkat;
-		$pemesanan->tanggalPulang = $request->tanggalPulang;
 		$pemesanan->status = $request->status;
-
+		$pemesanan->idBus = $request->idBus; 
 		$pemesanan-> save();
 
 		return redirect('pemesanan');

@@ -21,7 +21,7 @@ class crewController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $crew = crew::where('nama', 'LIKE', "%$keyword%")
+            $crew = crew::where('supir', 'LIKE', "%$keyword%")
                 ->orWhere('pekerjaan', 'LIKE', "%$keyword%")
                 ->orWhere('telepon', 'LIKE', "%$keyword%")
                 ->orWhere('mulaiKerja', 'LIKE', "%$keyword%")
