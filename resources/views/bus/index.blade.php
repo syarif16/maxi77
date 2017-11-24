@@ -28,7 +28,7 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>TipeBus</th><th>Seat</th><th>JumlahKursi</th><th>Harga</th><th>Fasilitas</th><th>Kuantitas</th><th>Actions</th>
+                                        <th>ID</th><th>TipeBus</th><th>Seat</th><th>JumlahKursi</th><th>Harga</th><th>Fasilitas</th><th>Kuantitas</th><th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>

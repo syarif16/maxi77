@@ -46,7 +46,7 @@
 	</table>
 	{{-- {{}} --}}
 	<div class="col-md-5"></div>
-	<label>Total Pemasukan :</label>  {{$total}}
+	<label>Total Pemasukan : </label>  {{$total}}
 </div>
 </div>
 </div>
